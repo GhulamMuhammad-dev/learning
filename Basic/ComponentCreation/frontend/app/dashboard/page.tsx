@@ -1,4 +1,4 @@
-import ResizablePanel from "@/components/ResizablePanel";
+import ResizablePanel from "@/components/panel/ResizablePanel";
 
 export default function Dashboard() {
   return (

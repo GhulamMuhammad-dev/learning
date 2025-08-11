@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GPT Chat Pinner</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pinned Chats</h1>
+      <div id="pinsList" class="pins-list">
+        <!-- pinned items inserted here -->
+      </div>
+      <div id="empty" class="empty">No pinned chats yet. Pin from chat.openai.com</div>
+      <div class="footer">
+        <button id="openAllBtn" class="small">Open All</button>
+        <button id="clearAllBtn" class="small danger">Clear All</button>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

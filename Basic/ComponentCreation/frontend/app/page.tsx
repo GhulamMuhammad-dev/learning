@@ -1,12 +1,18 @@
-import ScrollablePanel from "@/components/ScrollablePanel";
+"use client";
+
+import React from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import LibraryPanel from "@/components/dargDrop/LibraryPanel";
+import Canvas from "@/components/dargDrop/Canvas";
 
 export default function Page() {
-  const data = Array.from({ length: 50 }, (_, i) => `Hello G ${i + 1}`);
-
   return (
-    <div className="flex  justify-start min-h-screen bg-gray-600">
-      <ScrollablePanel items={data} height="h-screen" side="left" />
-      
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div className="flex min-h-screen">
+        <LibraryPanel />
+        <Canvas />
+      </div>
+    </DndProvider>
   );
 }
