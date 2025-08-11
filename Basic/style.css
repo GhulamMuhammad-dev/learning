@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.panel {
+  width: 250px;           /* Panel width */
+  height: 100%;          /* Panel height (important) */
+  border: 1px solid #ccc; /* Just to see it */
+  overflow-y: auto;       /* Enables vertical scrolling when overflow */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item {
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #f4f4f4;
+}
+.container{
+    height: 100vh;
+    position: relative;
+}
