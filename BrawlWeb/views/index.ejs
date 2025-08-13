@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<h1>Brawl Stars: Search Player</h1>
+
+<form action="/search-player" method="POST" class="card">
+  <label>Player Tag (e.g. #ABCD123)</label>
+  <input name="tag" placeholder="#YOURTAG" required />
+  <button type="submit">Search</button>
+</form>
+
+<section class="hint">
+  <p>Tip: Your API key must allow your current IP in the <em>Brawl Stars Developer Portal</em>.</p>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+<h1>Player: <%= player.name %> (<%= player.tag %>)</h1>
+
+<div class="grid">
+  <div class="card">
+    <h3>Overview</h3>
+    <ul>
+
+      <li>Trophies: <strong><%= player.trophies %></strong></li>
+      <li>IconId: <strong><%= IconId %></strong></li>
+      <li>Highest Trophies: <%= player.highestTrophies %></li>
+      <li>Exp Level: <%= player.expLevel %></li>
+      <li>Club: <%= player.club ? player.club.name + ' (' + player.club.tag + ')' : 'None' %></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Save this Player</h3>
+    <form action="/saved" method="POST">
+      <input type="hidden" name="tag" value="<%= player.tag %>"/>
+      <input type="hidden" name="name" value="<%= player.name %>"/>
+      <input type="hidden" name="trophies" value="<%= player.trophies %>"/>
+      <label>Your Note</label>
+      <textarea name="note" placeholder="Why is this player interesting?"></textarea>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+
+<h2>Recent Battles</h2>
+<% if (!battles || battles.length === 0) { %>
+  <p>No battle log available.</p>
+<% } else { %>
+  <div class="list">
+    <% battles.forEach((b) => { %>
+      <div class="list-item">
+        <div>Mode: <%= b.battle?.mode %></div>
+        <div>Type: <%= b.battle?.type %></div>
+        <div>Time: <%= b.battleTime %></div>
+      </div>
+    <% }) %>
+  </div>
+<% } %>
+
+<%- include('partials/footer') %>

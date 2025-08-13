@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<h1>All Brawlers</h1>
+<div class="grid">
+  <% brawlers.forEach(b => { %>
+    <div class="card">
+      <h3><%= b.name %></h3>
+      <p>ID: <%= b.id %></p>
+      <p>Star Powers: <%= b.starPowers?.length || 0 %></p>
+      <p>Gadgets: <%= b.gadgets?.length || 0 %></p>
+    </div>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %>

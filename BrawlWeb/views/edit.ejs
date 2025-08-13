@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<h1>Edit Note</h1>
+<p><strong><%= player.name %></strong> (<%= player.tag %>)</p>
+
+<form action="/saved/<%= player.id %>?_method=PUT" method="POST" class="card">
+  <label>Note</label>
+  <textarea name="note"  required><%= player.note || '' %></textarea>
+  <button type="submit">Save Changes</button>
+  <a class="link" href="/saved">Cancel</a>
+</form>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+
+<h1>Oops!</h1>
+<p><%= message %></p>
+
+<% if (error) { %>
+  <pre class="error"><%= typeof error === 'string' ? error : JSON.stringify(error, null, 2) %></pre>
+<% } %>
+
+<%- include('partials/footer') %>
